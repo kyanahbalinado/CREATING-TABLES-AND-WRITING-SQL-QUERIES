@@ -1,0 +1,44 @@
+1
+SELECT *
+FROM Users
+WHERE DateOfBirth BETWEEN '2000-01-01' AND '2004-12-31';
+
+2
+SELECT *
+FROM Posts
+WHERE PostedBy = 4;
+
+3
+SELECT GroupName
+FROM Groups;
+
+4
+SELECT *
+FROM GroupMembershipRequests
+WHERE GroupMemberUserID = 2;
+
+5
+SELECT DISTINCT 
+    CASE 
+        WHEN FriendWhoAdded = 2 THEN FriendBeingAdded
+        ELSE FriendWhoAdded
+    END AS FriendID
+FROM Friends
+WHERE FriendWhoAdded = 2 OR FriendBeingAdded = 2;
+
+6
+SELECT *
+FROM Friends
+WHERE FriendWhoAdded = 1;
+
+7
+SELECT *
+FROM Posts
+WHERE GroupID = 2
+AND IsOnlyForFriends = FALSE;
+
+8
+SELECT *
+FROM GroupMembershipRequests
+WHERE GroupID = 2
+AND IsGroupMemberShipAccepted = FALSE;
